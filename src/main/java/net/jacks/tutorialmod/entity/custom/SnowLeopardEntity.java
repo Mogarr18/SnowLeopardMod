@@ -71,8 +71,8 @@ public class SnowLeopardEntity extends Animal {
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        return ModEntities.SnowLeopard.get().create(pLevel);
+    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMod) {
+        return ModEntities.SnowLeopard.get().create(serverLevel);
     }
 
     private void setupAnimationStates(){

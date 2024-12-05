@@ -16,8 +16,8 @@ public class ModEntities {
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TutorialMod.MOD_ID);
 
     public static final RegistryObject<EntityType<SnowLeopardEntity>> SnowLeopard =
-            ENTITY_TYPES.register("snow leopard", () -> EntityType.Builder.of(SnowLeopardEntity::new, MobCategory.CREATURE)
-                    .sized(2.5f,2.5f).build("snow leopard"));
+            ENTITY_TYPES.register("snowleopard", () -> EntityType.Builder.of(SnowLeopardEntity::new, MobCategory.CREATURE)
+                    .sized(2.0f,1.5f).build("snowleopard"));
 
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
