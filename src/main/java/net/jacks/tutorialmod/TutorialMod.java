@@ -3,6 +3,7 @@ package net.jacks.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.jacks.tutorialmod.entity.ModEntities;
 import net.jacks.tutorialmod.entity.client.SnowLeopardRenderer;
+import net.jacks.tutorialmod.item.ModCreativeModeTabs;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -34,6 +35,7 @@ public class TutorialMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeModeTabs.register(modEventBus);
 
         ModEntities.register(modEventBus);
 
