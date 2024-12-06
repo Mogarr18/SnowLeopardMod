@@ -61,7 +61,7 @@ public class SnowLeopardEntity extends Animal {
     public static AttributeSupplier.Builder createAttributes(){
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH,20D)
-                .add(Attributes.MOVEMENT_SPEED,3D)
+                .add(Attributes.MOVEMENT_SPEED,.25D)
                 .add(Attributes.FOLLOW_RANGE, 15D)
                 .add(Attributes.ATTACK_DAMAGE, 2f)
                 .add(Attributes.ATTACK_SPEED, 1.5f);

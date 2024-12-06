@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SnowLeopardRenderer extends MobRenderer<SnowLeopardEntity, SnowLeopardModel> {
     public SnowLeopardRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new SnowLeopardModel(pContext.bakeLayer(ModModelLayers.SNOW_LEOPARD_LAYER)), 1f);
+        super(pContext, new SnowLeopardModel(pContext.bakeLayer(ModModelLayers.SNOW_LEOPARD_LAYER)), .5f);
     }
 
     @Override

@@ -17,7 +17,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<SnowLeopardEntity>> SnowLeopard =
             ENTITY_TYPES.register("snowleopard", () -> EntityType.Builder.of(SnowLeopardEntity::new, MobCategory.CREATURE)
-                    .sized(2.0f,1.5f).build("snowleopard"));
+                    .sized(1.0f,1.0f).build("snowleopard"));
 
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);
