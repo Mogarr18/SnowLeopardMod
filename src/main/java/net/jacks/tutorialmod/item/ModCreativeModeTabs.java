@@ -13,10 +13,6 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TutorialMod.MOD_ID);
 
-    public static void register(IEventBus eventBus) {
-        CREATIVE_MODE_TAB.register(eventBus);
-    }
-
     public static final RegistryObject<CreativeModeTab> SNOW_LEOPARD_ITEMS_TAB = CREATIVE_MODE_TAB.register("snow_leopard_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.Snow_Leopard_Spawn_Egg.get()))
                     .title(Component.translatable("creativetab.snow_leopard_items"))
@@ -26,5 +22,9 @@ public class ModCreativeModeTabs {
 
                     }).build());
 
+
+    public static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TAB.register(eventBus);
+    }
 
 }
