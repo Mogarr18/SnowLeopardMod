@@ -20,7 +20,7 @@ public class SnowLeopardModel extends HierarchicalModel<SnowLeopardEntity> {
 
 	public SnowLeopardModel(ModelPart root) {
 		this.SnowLeopard = root.getChild("SnowLeopard");
-		this.head = this.SnowLeopard.getChild("head");
+		this.head = SnowLeopard.getChild("head");
 
 	}
 
@@ -63,11 +63,12 @@ public class SnowLeopardModel extends HierarchicalModel<SnowLeopardEntity> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch);
 
-		this.animate(entity.idleAnimationState, SnowLeopardAnimations.IDLE,ageInTicks, 1f);
+		this.animateWalk(SnowLeopardAnimations.RUNNINGTAIL,limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animate(entity.idleAnimationState, SnowLeopardAnimations.IDLE, ageInTicks, 1f);
 	}
 
 	private void applyHeadRotation(float headYaw, float headPitch) {
-		headYaw = Mth.clamp(headYaw, -30f, 30f);
+		headYaw = Mth.clamp(headYaw, -35f, 35f);
 		headPitch = Mth.clamp(headPitch, -25f, 45f);
 
 		this.head.xRot = headYaw * ((float)Math.PI / 180F);

@@ -37,6 +37,7 @@ public class SnowLeopardEntity extends Animal {
         this.goalSelector.addGoal(0, new FloatGoal(this));
       //this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
       //this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(2, new PanicGoal(this, 1.5f));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0, true));
       //this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
@@ -88,7 +89,7 @@ public class SnowLeopardEntity extends Animal {
     public void tick() {
         super.tick();
 
-        if (this.level().isClientSide){
+        if (this.level().isClientSide()){
             this.setupAnimationStates();
         }
     }
