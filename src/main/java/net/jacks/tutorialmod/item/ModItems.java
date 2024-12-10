@@ -15,7 +15,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> Snow_Leopard_Spawn_Egg = ITEMS.register("snow_leopard_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.SnowLeopard, 0x664216, 0xdeab1f,
+            () -> new ForgeSpawnEggItem(ModEntities.SnowLeopard, 0xdcdbc6, 0x5c5c5c,
                     new Item.Properties()));
 
     public static void register(IEventBus eventBus){

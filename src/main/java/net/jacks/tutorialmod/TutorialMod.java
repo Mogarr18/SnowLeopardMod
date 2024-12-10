@@ -6,7 +6,9 @@ import net.jacks.tutorialmod.entity.client.SnowLeopardRenderer;
 import net.jacks.tutorialmod.item.ModCreativeModeTabs;
 import net.jacks.tutorialmod.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.CreativeModeTabRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -60,7 +62,9 @@ public class TutorialMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.Snow_Leopard_Spawn_Egg);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
