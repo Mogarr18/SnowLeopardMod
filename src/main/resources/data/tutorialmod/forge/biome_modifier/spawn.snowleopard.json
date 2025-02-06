@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:jagged_peaks",
+  "spawners": {
+    "type": "tutorialmod:snowleopard",
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 10
+  }
+}

@@ -14,8 +14,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         super(output, lookupProvider, TutorialMod.MOD_ID, existingFileHelper);
     }
 
+
     @Override
-    protected void addTags(HolderLookup.Provider Provider) {
+    protected void addTags(HolderLookup.Provider pProvider) {
 
     }
 }

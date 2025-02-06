@@ -1,10 +1,14 @@
 package net.jacks.tutorialmod.entity.custom;
 
 import net.jacks.tutorialmod.entity.ModEntities;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -15,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
 public class SnowLeopardEntity extends Animal {
@@ -92,5 +97,10 @@ public class SnowLeopardEntity extends Animal {
         if (this.level().isClientSide()){
             this.setupAnimationStates();
         }
+    }
+    public static boolean checkSnowLeopardSpawnRules(
+            EntityType<? extends Animal> SnowLeopard, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
+    ) {
+        return pLevel.getBlockState(pPos.below()).is(BlockTags.GOATS_SPAWNABLE_ON) && isBrightEnoughToSpawn(pLevel, pPos);
     }
 }
